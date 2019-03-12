@@ -7,6 +7,6 @@ import java.lang.annotation.Target;
 
 @Target(ElementType.TYPE)
 @Retention(RetentionPolicy.RUNTIME)
-public @interface BasePackge {
-    String value() default "";
+public @interface BasePackage {
+    String[] value() default {};
 }
