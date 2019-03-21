@@ -12,7 +12,7 @@ import com.rabbitmq.client.DefaultConsumer;
 import com.rabbitmq.client.Envelope;
 
 /**
- * @类描述：消费者1
+ * @类描述：消费者2
  * @创建人：liulei
  * @创建时间：2019年3月21日 下午3:30:57
  * @版权：Copyright (c)

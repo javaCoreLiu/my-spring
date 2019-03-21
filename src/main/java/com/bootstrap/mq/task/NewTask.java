@@ -9,7 +9,7 @@ import com.rabbitmq.client.ConnectionFactory;
 import com.rabbitmq.client.MessageProperties;
 
 /**
- * @类描述：生产者
+ * @类描述：生产者,多任务，多消费者处理
  * @创建人：liulei
  * @创建时间：2019年3月21日 下午3:24:11
  * @版权：Copyright (c)
