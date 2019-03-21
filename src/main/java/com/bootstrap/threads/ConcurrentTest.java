@@ -1,30 +1,30 @@
 package com.bootstrap.threads;
 
-import java.util.concurrent.CountDownLatch;
+import java.util.concurrent.locks.Lock;
+import java.util.concurrent.locks.ReentrantLock;
 
 public class ConcurrentTest {
     
-    private transient int numbs = 100;
+    private int numbs = 0;
     
-    private CountDownLatch maxThread = new CountDownLatch(100);
+    private Lock lock = new ReentrantLock();
+    
+    private void atomicAdd() {
+        numbs++;
+    }
     
     public void sale() {
         for (int i = 0; i < 100; i++) {
             new Thread(new Runnable() {
                 public void run() {
-                    synchronized (this) {
-                        numbs--;
-                        System.out.println("numbs = " + numbs);
-                    }
+                    atomicAdd();
                 }
             }).start();
-            maxThread.countDown();
         }
     }
     
-    public static void main(String[] args) {
-        ConcurrentTest test = new ConcurrentTest();
-        test.sale();
+    public static void main(String[] args) throws Exception {
+        
     }
     
 }
